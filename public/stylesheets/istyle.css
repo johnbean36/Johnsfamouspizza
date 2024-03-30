@@ -1,0 +1,58 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 10vmin 1fr;
+  grid-template-areas: "nav" "main";
+  margin: 0;
+  background-color: #65737e;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #f3eee5;
+  font-size: 3vmin;
+  color: white;
+}
+
+#login {
+  display: flex;
+  width: 15vmin;
+  height: 6.9vmin;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  border-radius: 3vmin;
+  margin: 3vmin;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+main {
+  font-size: 5vmin;
+  height: 80vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+

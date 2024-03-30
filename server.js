@@ -11,7 +11,8 @@ require('./config/database');
 require('./config/passport');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/orders');
+var ordersRouter = require('./routes/orders');
+const createRouter = require('./routes/create');
 
 var app = express();
 
@@ -42,7 +43,8 @@ app.use(function (req, res, next) {
 
 app.use('/', indexRouter);
 app.use('/orders', ordersRouter);
-
+app.use('/create', createRouter);
+console.log('Test Variable:', process.env.TEST_VARIABLE);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

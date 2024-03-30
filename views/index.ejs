@@ -1,11 +1,15 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<link rel='stylesheet' href='./stylesheets/istyle.css' />
+<%- include('./partials/header.ejs'); %>
+<nav>
+  <a href="/login">
+  <div id="login">Login</div>
+  </a>
+</nav>
+<main>
+  <div class="welcome">
+    <div>Welcome to John's Famous Pizza POS System</div>
+    <div>Log in to get started</div>
+  </div>
+</main>
+<%- include('./partials/footer.ejs'); %>
+
