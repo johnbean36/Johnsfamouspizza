@@ -97,6 +97,34 @@ input {
   justify-content: center;
 }
 
-.input {
+.inputs {
   height: 10vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.labels {
+  height: 10vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+#cust {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 10vmin;
+  width: 35vmin;
+}
+
+#custbutton {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#formcust {
+  display: grid;
+  grid-template-rows: 1fr 0.5fr;
 }

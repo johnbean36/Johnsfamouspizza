@@ -1,5 +1,7 @@
 const User = require('../models/user');
 const Customer = require('../models/customer');
+const Employee = require('../models/employee');
+const Order = require('../models/orders');
 
 function createOrder(req,res){
     let value;
@@ -15,18 +17,13 @@ function createOrder(req,res){
 });
 }
 
-async function lookup(req, res){
+async function lookup(req,res){
     let customer;
     let value = req.body.phone;
     let check = false;
-    try{
-        customer = await Customer.find(`${req.body.phone}`);
-        if(customer){
-            check = true
-        }
-    }catch(err){
-        console.log(err);
-    }
+    if(req.body.phone){
+        check = true;
+    }    
     res.render('ordering/create', {
         title: "Pizza Orders",
         phoneNumber: value,
@@ -35,7 +32,27 @@ async function lookup(req, res){
     })
 }
 
+async function addCust(req,res){
+    check = true;
+    try{
+        const cust = await Customer.create({
+            name: req.body.custname,
+            phoneNumber: req.body.phone,
+            address: req.body.address
+        })
+    }catch(err){
+        console.log(err);
+    }
+    res.render('ordering/create', {
+        title: "Pizza Orders",
+        phoneNumber: req.body.phone,
+        customer: req.body.custname,
+        check: check
+    })
+}
+
 module.exports = {
     createOrder,
-    lookup
+    lookup,
+    addCust
 }
