@@ -1,9 +1,6 @@
 const Employee = require('../models/employee');
 
-
 module.exports = async function(req, res, next){
-    console.log(req.user);
-
     if(req.isAuthenticated()){
         email = req.user.email;
         try{
@@ -13,6 +10,7 @@ module.exports = async function(req, res, next){
             }
             else{
                 res.redirect('/');
+                return;
             }
         }catch(err){
             console.log(err);

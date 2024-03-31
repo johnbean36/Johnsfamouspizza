@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const moviesCtrl = require('../controllers/create');
 const loggedIn = require('../config/loggedIn');
+const orderingCtrl = require('../controllers/ordering')
 
-router.get('/', loggedIn, moviesCtrl.createOrder);
+router.get('/', loggedIn, orderingCtrl.createOrder);
 
 module.exports = router;
