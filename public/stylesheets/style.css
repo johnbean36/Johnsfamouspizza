@@ -56,9 +56,8 @@ nav {
 main {
   font-size: 5vmin;
   height: 80vmin;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 a {
@@ -66,4 +65,20 @@ a {
   text-decoration: none;
 }
 
+#left {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center
+}
+
+#middle {
+  background-color: blue;
+}
+
+#frame {
+  border: ridge;
+  height: 30vmin;
+  width: 50vmin;
+  margin-top:10vmin;
+}
 
