@@ -71,8 +71,17 @@ a {
   justify-content: center
 }
 
+input {
+  height: 2.5vmin;
+  font-size: 2vmin;
+  width: 12vmin;
+}
 #middle {
   background-color: blue;
+}
+
+#phonenum {
+  height: 3vmin;
 }
 
 #frame {
@@ -80,5 +89,10 @@ a {
   height: 30vmin;
   width: 50vmin;
   margin-top:10vmin;
+  font-size: 2vmin;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 

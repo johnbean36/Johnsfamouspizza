@@ -9,10 +9,29 @@
     </a>
 </nav>
 <main>
+  
   <section id="left">
     <div id="frame">
-      
+      <div>
+        <form action="/ordering/lookup" method="Post">
+        <label for="phone">Customer Phone Number</label>
+        <input type="text" name="phone" pattern="\d{10}" value="<%= phoneNumber || '' %>">
+        <button type="submit" id="phoneNum">Lookup Customer</button>
+        </form>
+      </div>
+      <div>
+       <br> 
+       <% if(customer){ %>
+        A returning customer!
+      <% } else { %>
+        <% if(phoneNumber){ %>
+          New customer, enter their name and phone number.
+        <% } %>
+      <% } %> 
     </div>
+  
+      
+    
   </section>
   <section id="middle">
 
