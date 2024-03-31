@@ -82,6 +82,7 @@ input {
 
 #phonenum {
   height: 3vmin;
+  width: 3vmin;
 }
 
 #frame {
@@ -96,3 +97,6 @@ input {
   justify-content: center;
 }
 
+.input {
+  height: 10vmin;
+}

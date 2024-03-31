@@ -11,16 +11,16 @@
 <main>
   
   <section id="left">
-    <div id="frame">
+    <div id="frame" class="input">
       <div>
         <form action="/ordering/lookup" method="Post">
         <label for="phone">Customer Phone Number</label>
-        <input type="text" name="phone" pattern="\d{10}" value="<%= phoneNumber || '' %>">
-        <button type="submit" id="phoneNum">Lookup Customer</button>
+        <input type="text" name="phone" pattern="\d{10}" required value="<%= phoneNumber || '' %>">
+        <button type="submit" id="phoneNum">Lookup<br>Customer</button>
         </form>
       </div>
       <div>
-       <br> 
+       <br>
        <% if(customer){ %>
         A returning customer!
       <% } else { %>
@@ -29,17 +29,31 @@
         <% } %>
       <% } %> 
     </div>
-  
-      
-    
-  </section>
-  <section id="middle">
+    <form action="/ordering/addcust" method="POST">
+    <div class="input">
+      <% if(check === true){ %>
+        <input type="hidden" name="phone" value="<%= phoneNumber %>" >
+        <div>
+          <label for="custname">Customer Name</label>
+          <input type="text" name="custname" required>
+        </div>
+        <div>
+          <label for="address">Address</label>
+          <input type="text" name="address" required>
+        </div>
+        <button type="submit">Add Customer</button>
+      </form>
+        
+      <% } %>
+    </div>
 
-  </section>
-  <section id="right">
+    </div>
+    <section id="middle">
 
-  </section>
+    </section>
+    <section id="right">
 
+    </section>
     
 </main>
 <%- include('../partials/footer'); %>
