@@ -11,8 +11,8 @@
 <main>
   
   <section id="left">
-    <div id="frame" class="input">
-      <div>
+    <div id="frame">
+      <div id="div1">
         <form action="/ordering/lookup" method="Post">
         <label for="phone">Customer Phone Number</label>
         <input type="text" name="phone" pattern="\d{10}" required value="<%= phoneNumber || '' %>">
@@ -21,19 +21,19 @@
       </div>
       <div>
        <br>
-       <% if(customer){ %>
+       <% if(check !== true && phoneNumber){ %>
         A returning customer!
       <% } else { %>
         <% if(phoneNumber){ %>
-          New customer, enter their name and phone number.
+          New customer, enter their name and Address.
         <% } %>
-      <% } %> 
+      <% } %>
     </div>
 
     <div class="input">
       <% if(check === true){ %>
         <form action="/ordering/addcust" method="POST" id="formcust">
-        <div id="cust">
+        <div class="cust">
           <div class="labels">
             <label for="custname">Customer Name</label>
             <label for="address">Address</label>
@@ -51,13 +51,66 @@
         
       <% } %>
     </div>
+  </section>
 
-    </div>
     <section id="middle">
 
     </section>
     <section id="right">
-
+      <div id="frame2">
+        <form action="/ordering/new" method="POST" id="toppings">
+          <div id='checks'>
+            <input class="check" type="checkbox" id="pep" name="pep">
+            <input class="check" type="checkbox" id="beef" name="beef">
+            <input class="check" type="checkbox" id="sausage" name="sausage">
+            <input class="check" type="checkbox" id="bacon" name="bacon">
+            <input class="check" type="checkbox" id="chicken" name="chicken">
+            <input class="check" type="checkbox" id="tomato" name="tomato">
+            <input class="check" type="checkbox" id="gpepper" name="gpepper">
+            <input class="check" type="checkbox" id="onion" name="onion">
+            <input class="check" type="checkbox" id="bolive" name="bolive">
+            <input class="check" type="checkbox" id="mushroom" name="mushroom">
+            <input class="check" type="checkbox" id="jalapeno" name="jalapeno">            
+          </div>
+          <div id="clabels">
+            <label class="clabel" for="pep">Pepperoni</label>
+            <label class="clabel" for="beef">Beef</label>
+            <label class="clabel" for="sausage">Sausage</label>
+            <label class="clabel" for="bacon">Bacon</label>
+            <label class="clabel" for="chicken">Chicken</label>
+            <label class="clabel" for="tomato">Tomato</label>
+            <label class="clabel" for="gpepper">Green Pepper</label>
+            <label class="clabel" for="onion">Onion</label>
+            <label class="clabel" for="bolive">Black Olive</label>
+            <label class="clabel" for="mushroom">Mushroom</label>
+            <label class="clabel" for="jalepeno">Jalapeno</label>
+          </div>
+          <div id="options">
+            <div>
+              <label for="psize">Pizza Size</label>
+              <label for="sauce">Sauce</label>
+              <label for="cheese">Cheese</label>
+            </div>
+            <div>
+              <select class="drop" name="psize" id="psize" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+                </select>
+              <select class="drop" name="sauce" id="sauce">
+                <option value="sauce" selected>Sauce</option>
+                <option value="nsauce">No Sauce</option>
+              </select>
+              <select class="drop" name="cheese" id="cheese">
+                <option value="No Cheese">No Cheese</option>
+                <option value="Regular">Regular Cheese</option>
+                <option value="Extra Cheese">Extra Cheese</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
     </section>
     
 </main>
