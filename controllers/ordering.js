@@ -6,7 +6,6 @@ const Order = require('../models/orders');
 function createOrder(req,res){
     let value;
     let customer;
-    let custId = null;
     if(req.body.phone){
         value = req.body.phone;
     }
@@ -15,7 +14,6 @@ function createOrder(req,res){
         phoneNumber: value,
         customer: customer,
         check: false,
-        customerId: custId
 });
 }
 
@@ -24,12 +22,10 @@ async function lookup(req,res){
     let value = req.body.phone;
     let check = false;
     let phone;
-    let custId;
 
     if(req.body.phone){
         try{
             phone = await Customer.findOne({phoneNumber: req.body.phone});
-            custId = phone._id;
         }catch(err){
             console.log(err);
             return;
@@ -44,7 +40,6 @@ async function lookup(req,res){
         phoneNumber: value,
         customer: customer,
         check: check,
-        customerId: custId
     })
 }
 
@@ -68,8 +63,21 @@ async function addCust(req,res){
     })
 }
 
+async function newOrder(req,res){
+    let customerId;
+    try{
+        const customer = await Customer.findOne({phoneNumber: req.body.phone});
+       customerId = customer._id;
+       console.log(customerId);
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+
 module.exports = {
     createOrder,
     lookup,
-    addCust
+    addCust,
+    newOrder
 }

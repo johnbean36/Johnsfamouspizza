@@ -12,13 +12,14 @@
   
   <section id="left">
     <div id="frame">
-      <div id="div1">
+
         <form action="/ordering/lookup" method="Post">
-        <label for="phone">Customer Phone Number</label>
-        <input type="text" name="phone" pattern="\d{10}" required value="<%= phoneNumber || '' %>">
-        <button type="submit" id="phoneNum">Lookup<br>Customer</button>
-        </form>
+      <div id="div1">
+        <label for="phone" class="c">Customer Phone Number</label>
+        <input type="text" class="c" name="phone" pattern="\d{10}" required value="<%= phoneNumber || '' %>">
+        <button type="submit" class = "c" id="phoneNum">Lookup<br>Customer</button>
       </div>
+        </form>
       <div>
        <br>
        <% if(check !== true && phoneNumber){ %>
@@ -92,6 +93,7 @@
               <label for="cheese">Cheese</label>
             </div>
             <div>
+              <input type="hidden" name="phone" value="<%= phoneNumber %>">
               <select class="drop" name="psize" id="psize" required>
                 <option value="" disabled selected>Select an option</option>
                 <option value="Small">Small</option>
@@ -107,6 +109,9 @@
                 <option value="Regular">Regular Cheese</option>
                 <option value="Extra Cheese">Extra Cheese</option>
               </select>
+            </div>
+            <div>
+              <button type="submit" method="POST">Create Pizza</button>
             </div>
           </div>
         </form>
