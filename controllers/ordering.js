@@ -69,34 +69,34 @@ async function newOrder(req,res){
     if(req.body.pep){
         toppings.push("Pepperoni");
     }
-    else if(req.body.beef){
+    if(req.body.beef){
         toppings.push("Beef");
     }
-    else if(req.body.sausage){
+    if(req.body.sausage){
         toppings.push("Sausage");
     }
-    else if(req.body.bacon){
+    if(req.body.bacon){
         toppings.push("Bacon");
     }
-    else if(req.body.chicken){
+    if(req.body.chicken){
         toppings.push("Chicken");
     }
-    else if(req.body.tomato){
+    if(req.body.tomato){
         toppings.push("Tomato");
     }
-    else if(req.body.gpepper){
+    if(req.body.gpepper){
         toppings.push("Green Pepper");
     }
-    else if(req.body.onion){
+    if(req.body.onion){
         toppings.push("Onion");
     }
-    else if(req.body.bolive){
+    if(req.body.bolive){
         toppings.push("Black Olive");
     }
-    else if(req.body.mushroom){
+    if(req.body.mushroom){
         toppings.push("Mushroom");
     }
-    else if(req.body.jalapeno){
+    if(req.body.jalapeno){
         toppings.push("Jalapeno");
     }
 
