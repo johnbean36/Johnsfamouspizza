@@ -17,7 +17,7 @@
         <form action="/ordering/lookup" method="Post">
       <div id="div1">
         <label for="phone" class="c">Customer Phone Number</label>
-        <input type="text" class="c" name="phone" pattern="\d{10}" required value="<%= phoneNumber || '' %>">
+        <input type="text" class="c" id="phone" name="phone" pattern="\d{10}" required value="<%= phoneNumber || '' %>">
         <button type="submit" class = "c" id="phoneNum">Lookup<br>Customer</button>
       </div>
         </form>
@@ -112,7 +112,7 @@
               </select>
             </div>
             <div>
-              <button type="button" id="submitp">Create Pizza</button>
+              <button type="submit" id="submitp">Create Pizza</button>
             </div>
           </div>
         </form>
