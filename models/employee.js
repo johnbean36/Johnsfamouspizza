@@ -11,7 +11,7 @@ const employeeSchema = new Schema({
     },
     employeeNumber: {
         type: Number
-    }
+    },
 });
 
 module.exports = mongoose.model("Employee", employeeSchema);

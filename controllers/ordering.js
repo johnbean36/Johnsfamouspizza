@@ -67,8 +67,10 @@ async function newOrder(req,res){
     let customerId;
     try{
         const customer = await Customer.findOne({phoneNumber: req.body.phone});
-       customerId = customer._id;
-       console.log(customerId);
+        customerId = customer._id;
+        const employee = await Employee.findOne({email: req.user.email});
+        employeeId = employee._id;
+        console.log(employeeId);
     }
     catch(err){
         console.log(err);

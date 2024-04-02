@@ -10,7 +10,7 @@ const customerSchema = new Schema({
     },
     address: {
         type: String
-    }
+    },
 }, {
     timestamps: true
 });
