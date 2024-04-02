@@ -5,6 +5,6 @@ const orderingCtrl = require('../controllers/ordering')
 
 router.get('/', loggedIn, orderingCtrl.createOrder);
 router.post('/lookup', loggedIn, orderingCtrl.lookup);
-router.post('/addcust', loggedIn, orderingCtrl.addCust)
+router.post('/addcust', loggedIn, orderingCtrl.addCust);
 router.post('/new', loggedIn, orderingCtrl.newOrder);
 module.exports = router;
