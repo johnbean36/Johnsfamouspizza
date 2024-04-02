@@ -69,12 +69,19 @@ async function newOrder(req,res){
         const customer = await Customer.findOne({phoneNumber: req.body.phone});
         customerId = customer._id;
         const employee = await Employee.findOne({email: req.user.email});
-        employeeId = employee._id;
-        console.log(employeeId);
+        let employeeId = employee._id;
+        Order.create({
+            employee: employeeId,
+            customer: customerId,
+            size: req.body.psize,
+            cheese: req.body.cheese,
+            sauce: req.body.sauce,
+        });
     }
     catch(err){
         console.log(err);
     }
+
 }
 
 module.exports = {
