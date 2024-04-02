@@ -65,6 +65,41 @@ async function addCust(req,res){
 
 async function newOrder(req,res){
     let customerId;
+    let toppings = [];
+    if(req.body.pep){
+        toppings.push("Pepperoni");
+    }
+    else if(req.body.beef){
+        toppings.push("Beef");
+    }
+    else if(req.body.sausage){
+        toppings.push("Sausage");
+    }
+    else if(req.body.bacon){
+        toppings.push("Bacon");
+    }
+    else if(req.body.chicken){
+        toppings.push("Chicken");
+    }
+    else if(req.body.tomato){
+        toppings.push("Tomato");
+    }
+    else if(req.body.gpepper){
+        toppings.push("Green Pepper");
+    }
+    else if(req.body.onion){
+        toppings.push("Onion");
+    }
+    else if(req.body.bolive){
+        toppings.push("Black Olive");
+    }
+    else if(req.body.mushroom){
+        toppings.push("Mushroom");
+    }
+    else if(req.body.jalapeno){
+        toppings.push("Jalapeno");
+    }
+
     try{
         const customer = await Customer.findOne({phoneNumber: req.body.phone});
         customerId = customer._id;
@@ -76,6 +111,7 @@ async function newOrder(req,res){
             size: req.body.psize,
             cheese: req.body.cheese,
             sauce: req.body.sauce,
+            toppings: toppings
         });
     }
     catch(err){

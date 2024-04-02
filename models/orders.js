@@ -12,3 +12,5 @@ const orderSchema = new Schema({
     size: {type: String, enum:["Small", "Medium", "Large"]},
     totalPrice: {type: Number}
 })
+
+module.exports = mongoose.model('Order', orderSchema);
