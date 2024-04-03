@@ -1,8 +1,5 @@
 body {
   font: "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-body {
   height: 100vh;
   display: grid;
   grid-template-rows: 10vmin 1fr;
@@ -21,18 +18,6 @@ nav {
   color: white;
 }
 
-#create {
-  display: flex;
-  width: 20vmin;
-  height: 6.9vmin;
-  align-items: center;
-  justify-content: center;
-  background-color: gray;
-  border-radius: 3vmin;
-  border-style:inset;
-  margin: 3vmin;
-}
-
 .orders {
   display: flex;
   width: 20vmin;
@@ -43,6 +28,13 @@ nav {
   border-radius: 3vmin;
   margin: 3vmin;
 }
+
+#create {
+  background-color: gray;
+  border-style:inset;
+}
+
+
 
 #number {
   font-size: 2vmin;
@@ -153,18 +145,19 @@ input {
 .check {
   height: 2vmin;
   width: 2vmin;
-  margin-top: 0.4vmin;
+  margin-left: 0;
 }
 
 .clabel {
   font-size: 2vmin;
-  margin-top: 0.3vmin;
+  margin: 0px;
 }
 
 #checks {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: center;
 }
 
 #clabels {
@@ -172,12 +165,13 @@ input {
   flex-direction: column;
   align-items: flex-start;
   margin-left: 1vmin;
+  background-color: white;
 }
 
 #toppings {
   display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
-  height: 10vmin;
+  grid-template-columns: 1fr 1fr;
+  height: 12vmin;
 }
 
 #options {
@@ -194,4 +188,16 @@ input {
 
 .c {
   margin: 1vmin;
+}
+
+.top {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 20vmin;
+}
+
+.top .check {
+  margin-right: 10px;
 }

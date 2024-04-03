@@ -1,10 +1,15 @@
 <%- include('../partials/header'); %>
+<link rel = 'stylesheet' href="../../stylesheets/reset.css" />
 <link rel='stylesheet' href='../../stylesheets/style.css' />
 <script defer src="/javascripts/check.js"></script>
 <nav>
     <div id="create">Create Order</div>
+    <a href="/ordering/show">
     <div class="orders">Show Orders</div>
+    </a>
+    <a href="/ordering/orderId">
     <div class="orders" id="number">Show Order by<br> Order Number</div>
+    </a>
     <a id="logout" href="/logout">
       <div class="orders">Logout</div>
     </a>
@@ -62,30 +67,50 @@
       <div id="frame2">
         <form action="/ordering/new" method="POST" id="toppings">
           <div id='checks'>
-            <input class="check" type="checkbox" id="pep" name="pep">
-            <input class="check" type="checkbox" id="beef" name="beef">
-            <input class="check" type="checkbox" id="sausage" name="sausage">
-            <input class="check" type="checkbox" id="bacon" name="bacon">
-            <input class="check" type="checkbox" id="chicken" name="chicken">
-            <input class="check" type="checkbox" id="tomato" name="tomato">
-            <input class="check" type="checkbox" id="gpepper" name="gpepper">
-            <input class="check" type="checkbox" id="onion" name="onion">
-            <input class="check" type="checkbox" id="bolive" name="bolive">
-            <input class="check" type="checkbox" id="mushroom" name="mushroom">
-            <input class="check" type="checkbox" id="jalapeno" name="jalapeno">            
-          </div>
-          <div id="clabels">
-            <label class="clabel" for="pep">Pepperoni</label>
-            <label class="clabel" for="beef">Beef</label>
-            <label class="clabel" for="sausage">Sausage</label>
-            <label class="clabel" for="bacon">Bacon</label>
-            <label class="clabel" for="chicken">Chicken</label>
-            <label class="clabel" for="tomato">Tomato</label>
-            <label class="clabel" for="gpepper">Green Pepper</label>
-            <label class="clabel" for="onion">Onion</label>
-            <label class="clabel" for="bolive">Black Olive</label>
-            <label class="clabel" for="mushroom">Mushroom</label>
-            <label class="clabel" for="jalepeno">Jalapeno</label>
+            <div class="top">
+              <input class="check" type="checkbox" id="pep" name="pep">
+              <label class="clabel" for="pep">Pepperoni</label>
+            </div>
+            <div class="top">
+              <input class="check" type="checkbox" id="beef" name="beef">
+              <label class="clabel" for="beef">Beef</label>
+            </div>
+            <div class="top">
+              <input class="check" type="checkbox" id="sausage" name="sausage">
+              <label class="clabel" for="sausage">Sausage</label>
+            </div>
+            <div class="top">
+              <input class="check" type="checkbox" id="bacon" name="bacon">
+              <label class="clabel" for="bacon">Bacon</label>
+            </div>
+            <div class="top">
+              <input class="check" type="checkbox" id="chicken" name="chicken">
+              <label class="clabel" for="chicken">Chicken</label>
+            </div>
+            <div class="top">
+              <input class="check" type="checkbox" id="tomato" name="tomato">
+              <label class="clabel" for="tomato">Tomato</label>
+            </div>
+            <div class="top">
+              <input class="check" type="checkbox" id="gpepper" name="gpepper">
+              <label class="clabel" for="gpepper">Green Pepper</label>
+            </div>
+            <div class="top">
+              <input class="check" type="checkbox" id="onion" name="onion">
+              <label class="clabel" for="onion">Onion</label>
+            </div>
+            <div class="top">
+              <input class="check" type="checkbox" id="bolive" name="bolive">
+              <label class="clabel" for="bolive">Black Olive</label>
+            </div>
+            <div class="top">
+              <input class="check" type="checkbox" id="mushroom" name="mushroom">
+              <label class="clabel" for="mushroom">Mushroom</label>
+            </div>
+            <div class="top">
+              <input class="check" type="checkbox" id="jalapeno" name="jalapeno">
+              <label class="clabel" for="jalepeno">Jalapeno</label>
+            </div>
           </div>
           <div id="options">
             <div>

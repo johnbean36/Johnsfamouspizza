@@ -118,12 +118,27 @@ async function newOrder(req,res){
     catch(err){
         console.log(err);
     }
-    res.redirect('/ordering');
+    res.redirect('ordering');
+}
+
+async function showOrders(req,res){
+    let orders;
+    try{
+        orders = Order.find({});
+    }
+    catch(err){
+        console.log(err);
+    }
+    res.render('ordering/show', {
+        showOrder: orders,
+        title: "Show Orders"
+    })
 }
 
 module.exports = {
     createOrder,
     lookup,
     addCust,
-    newOrder
+    newOrder,
+    showOrders
 }
