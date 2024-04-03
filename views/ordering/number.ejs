@@ -13,25 +13,42 @@
   </a>
 </nav>
 <main>
-    <div>
-        <form action="/ordering/byNum" method="POST">
-            <div><label for="ordernum">Enter Order Number:&nbsp</label></div>
-            <div><input type="text" id="ordernum" name="ordernum"></div>
-            <button type="submit">Enter</button>
-        </form>
-  
-    <div>
-        <% if(orders !== null && orders !== undefined){ %>
-            <%= customer.name %><br>
-            <%= employee.name %><br>
-            <%= orders.size %><br>
-            <%= orders.sauce %><br>
-            <%= orders.cheese %><br>
-            <% toppings.forEach((t)=>{ %>
-                <%= t %> 
-            <% }) %>
+    <section></section>
+    <section>
+        <div>
+            <form action="/ordering/byNum" method="POST">
+                <div><label for="ordernum">Enter Order Number:&nbsp</label></div>
+                <div><input type="text" id="ordernum" name="ordernum"></div>
+                <button type="submit">Enter</button>
+            </form>
+        <div>
+            <% if(orders !== null && orders !== undefined){ %>
+                <div class="top">
+                    <div>Customer Name:&nbsp</div><div><%= customer.name %></div>
+                </div>
+                <div class="top">
+                    <div>Employee Name: &nbsp</div><div><%= employee.name %></div>
+                </div>
+                <div class="top">
+                    <div>Pizza Size:&nbsp</div><div><%= orders.size %></div>
+                </div>
+                <div class="top">
+                    <div>Sauce:&nbsp</div><div><%= orders.sauce %></div>
+                </div>
+                <div class="top">
+                    <div>Cheese:&nbsp</div><div><%= orders.cheese %></div>
+                </div>
+                
+                <% toppings.forEach((t)=>{ %>
+                    <div class="top"
+                        <div>Toppings:&nbsp</div><div><%= t %></div>
+                    </div> 
+                <% }) %>
 
-        <% } %>
-    </div>
+            <% } %>
+        </div>
+    </section>
+    <section></section>
+
 </main>
 <%- include('../partials/footer.ejs'); %>

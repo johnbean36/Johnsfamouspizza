@@ -69,3 +69,7 @@ main {
     font-size: 2vmin;
 }
 
+.top {
+    display: flex;
+    width: 10vmin;
+}
