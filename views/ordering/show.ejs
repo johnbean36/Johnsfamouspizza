@@ -14,7 +14,16 @@
   </a>
 </nav>
 <main>
-
+  <% orders.forEach((o)=>{ %>
+    <%= o.employee.name %><br>
+    <%= o.customer.name %><br>
+    <%= o.size %><br>
+    <%= o.sauce %><br>
+    <%= o.cheese %><br>
+    <% o.toppings.forEach((a)=>{ %>
+      <%= a %><br>
+   <% }) %>
+  <% }) %>
 </main>
 <%- include('../partials/footer.ejs'); %>
 

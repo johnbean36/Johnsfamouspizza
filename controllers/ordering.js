@@ -124,15 +124,16 @@ async function newOrder(req,res){
 async function showOrders(req,res){
     let orders;
     try{
-        orders = Order.find({});
+        Order.find({}).populate('employee').populate('customer').exec().then((orders) => {
+            res.render('ordering/show', {
+                title: "Show Orders",
+                orders: orders                
+            });
+        }); 
     }
     catch(err){
         console.log(err);
     }
-    res.render('ordering/show', {
-        showOrder: orders,
-        title: "Show Orders"
-    })
 }
 
 module.exports = {
