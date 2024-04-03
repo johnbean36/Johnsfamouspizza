@@ -8,4 +8,6 @@ router.post('/lookup', loggedIn, orderingCtrl.lookup);
 router.post('/addcust', loggedIn, orderingCtrl.addCust);
 router.post('/new', loggedIn, orderingCtrl.newOrder);
 router.get('/show', loggedIn, orderingCtrl.showOrders);
+router.get('/orderId', loggedIn, orderingCtrl.byNumber);
+router.post('/byNum', loggedIn, orderingCtrl.lookupNum);
 module.exports = router;

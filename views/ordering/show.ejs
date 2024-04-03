@@ -16,37 +16,44 @@
 <main>
   <section></section>
   <section>
+    
     <% orders.forEach((o)=>{ %>
-      <div class="orderlist">
-        <div>Order Number: </div>
-        <div><%= o.orderNumber %></div>
-      </div>
-      <div class="orderlist">
-        <div>Employee Name: </div>
-        <div><%= o.employee.name %></div>
-      </div>
-      <div class="orderlist">
-        <div>Customer Name: </div>
-        <div><%= o.customer.name %></div>
-      </div>
-      <div class="orderlist">
-        <div>Pizza Size:</div>
-        <div><%= o.size %></div>
-      </div>
-      <div class="orderlist">
-        <div>Pizza Sauce: </div>
-        <div><%= o.sauce %></div>
-      </div>
-      <div class="orderlist">
-        <div>Amount of cheese: </div>
-        <div><%= o.cheese %></div>
-      </div>
-      <div class="orderlist">
-        <% o.toppings.forEach((a)=>{ %>
-          <%= a %>
-          <% }) %>
+      <div id="spacing">
+        <div class="orderlist">
+          <div>Order Number:&nbsp</div>
+          <div><%= o.orderNumber %></div>
+        </div>
+        <div class="orderlist">
+          <div>Employee Name:&nbsp</div>
+          <div><%= o.employee.name %></div>
+        </div>
+        <div class="orderlist">
+          <div>Customer Name:&nbsp</div>
+          <div><%= o.customer.name %></div>
+        </div>
+        <div class="orderlist">
+          <div>Pizza Size:&nbsp</div>
+          <div><%= o.size %></div>
+        </div>
+        <div class="orderlist">
+          <div>Pizza Sauce:&nbsp</div>
+          <div><%= o.sauce %></div>
+        </div>
+        <div class="orderlist">
+          <div>Amount of cheese:&nbsp</div>
+          <div><%= o.cheese %></div>
+        </div>
+        <div class="orderlist">
+          <div>Toppings:&nbsp</div>
+          <div  id="tlist">
+            <% o.toppings.forEach((a)=>{ %>
+              <div><%= a %></div>          
+              <% }) %>
+            </div>
+        </div>
       </div>
   <% }) %>
+
   </section>
   <section></section>
 </main>

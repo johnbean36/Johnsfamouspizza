@@ -36,6 +36,15 @@ nav {
 #number {
     font-size: 1.9vmin;
     word-wrap: break-word;
+    display: flex;
+    width: 20vmin;
+    height: 6.9vmin;
+    align-items: center;
+    justify-content: center;
+    background-color: gray;
+    border-radius: 3vmin;
+    border-style:inset;
+    margin: 3vmin;
 }
 
 #logout {
@@ -60,16 +69,3 @@ main {
     font-size: 2vmin;
 }
 
-.orderlist {
-    display: flex;
-}
-
-#tlist {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-#spacing {
-    margin-bottom: 2vmin;
-}

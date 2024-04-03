@@ -125,7 +125,7 @@ async function newOrder(req,res){
     res.redirect('/ordering');
 }
 
-async function showOrders(req,res){
+function showOrders(req,res){
     let orders;
     try{
         Order.find({}).populate('employee').populate('customer').exec().then((orders) => {
@@ -140,10 +140,37 @@ async function showOrders(req,res){
     }
 }
 
+function byNumber(req,res){
+    res.render("ordering/number", {title: "Lookup Orders", orders: null});
+
+}
+
+function lookupNum(req,res){
+
+    try{
+        Order.findOne({orderNumber: Number(req.body.ordernum)}).populate('employee').populate('customer').exec().then((order) => {
+            
+            res.render('ordering/number', {
+                title: "Lookup Orders",
+                orders: order,
+                customer: order.customer,
+                employee: order.employee,
+                toppings: order.toppings               
+            });
+        }); 
+    }
+    catch(err){
+        console.log(err);
+    }
+
+}
+
 module.exports = {
     createOrder,
     lookup,
     addCust,
     newOrder,
-    showOrders
+    showOrders,
+    byNumber,
+    lookupNum
 }

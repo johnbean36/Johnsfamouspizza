@@ -1,0 +1,37 @@
+<link rel='stylesheet' href='../stylesheets/stylenum.css' />
+<%- include('../partials/header.ejs'); %>
+<nav>
+  <a href="/ordering" class="orders">
+    <div id="create">Create Order</div>
+  </a>
+  <a href="/ordering/show">
+  <div class="orders">Show Orders</div>
+  </a>
+    <div class="orders" id="number">Show Order by<br> Order Number</div>
+  <a id="logout" href="/logout" class="orders" id="logout">
+    <div class="orders">Logout</div>
+  </a>
+</nav>
+<main>
+    <div>
+        <form action="/ordering/byNum" method="POST">
+            <div><label for="ordernum">Enter Order Number:&nbsp</label></div>
+            <div><input type="text" id="ordernum" name="ordernum"></div>
+            <button type="submit">Enter</button>
+        </form>
+  
+    <div>
+        <% if(orders !== null && orders !== undefined){ %>
+            <%= customer.name %><br>
+            <%= employee.name %><br>
+            <%= orders.size %><br>
+            <%= orders.sauce %><br>
+            <%= orders.cheese %><br>
+            <% toppings.forEach((t)=>{ %>
+                <%= t %> 
+            <% }) %>
+
+        <% } %>
+    </div>
+</main>
+<%- include('../partials/footer.ejs'); %>
