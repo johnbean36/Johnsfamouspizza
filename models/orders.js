@@ -4,6 +4,7 @@ const employeeSchema = require('./employee');
 const customerSchema = require('./customer');
 
 const orderSchema = new Schema({
+    orderNumber: Number,
     employee: {type: Schema.Types.ObjectId, ref: 'Employee'},
     customer: {type: Schema.Types.ObjectId, ref: 'Customer'},
     sauce: {type: String},

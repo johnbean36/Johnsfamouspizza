@@ -15,8 +15,21 @@
 </nav>
 <main>
   <% orders.forEach((o)=>{ %>
-    <%= o.employee.name %><br>
-    <%= o.customer.name %><br>
+    <div>
+      <div>Order Number</div>
+      <div><%= o.orderNumber %></div>
+    </div>
+    <div>
+      <div>Employee Name</div>
+      <div><%= o.employee.name %></div>
+    </div>
+    <div>
+      <div>Customer Name</div>
+      <div><%= o.customer.name %></div>
+    </div>
+    <div>
+      
+    </div>
     <%= o.size %><br>
     <%= o.sauce %><br>
     <%= o.cheese %><br>

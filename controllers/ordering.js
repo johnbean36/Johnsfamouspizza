@@ -102,23 +102,27 @@ async function newOrder(req,res){
 
     try{
         const customer = await Customer.findOne({phoneNumber: req.body.phone});
+        let counts = 0;
         customerId = customer._id;
         console.log(customerId);
         const employee = await Employee.findOne({email: req.user.email});
         let employeeId = employee._id;
+        const count = await Order.countDocuments({})
+            counts = count + 1;
         Order.create({
             employee: employeeId,
             customer: customerId,
             size: req.body.psize,
             cheese: req.body.cheese,
             sauce: req.body.sauce,
-            toppings: toppings
+            toppings: toppings,
+            orderNumber: counts
         });
     }
     catch(err){
         console.log(err);
     }
-    res.redirect('ordering');
+    res.redirect('/ordering');
 }
 
 async function showOrders(req,res){
