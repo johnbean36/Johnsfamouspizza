@@ -71,5 +71,11 @@ main {
 
 .top {
     display: flex;
-    width: 10vmin;
+    width: 35vmin;
+}
+
+#top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }

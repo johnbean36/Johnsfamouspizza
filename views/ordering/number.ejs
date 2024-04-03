@@ -38,13 +38,14 @@
                 <div class="top">
                     <div>Cheese:&nbsp</div><div><%= orders.cheese %></div>
                 </div>
-                
-                <% toppings.forEach((t)=>{ %>
-                    <div class="top"
-                        <div>Toppings:&nbsp</div><div><%= t %></div>
-                    </div> 
-                <% }) %>
-
+                <div class="top">
+                    <div>Toppings:&nbsp</div>
+                    <div  id="tlist">
+                      <% toppings.forEach((a)=>{ %>
+                        <div><%= a %></div>          
+                        <% }) %>
+                      </div>
+                </div>
             <% } %>
         </div>
     </section>

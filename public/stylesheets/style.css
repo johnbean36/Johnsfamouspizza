@@ -30,8 +30,15 @@ nav {
 }
 
 #create {
+  display: flex;
+  width: 20vmin;
+  height: 6.9vmin;
+  align-items: center;
+  justify-content: center;
   background-color: gray;
+  border-radius: 3vmin;
   border-style:inset;
+  margin: 3vmin;
 }
 
 
@@ -69,7 +76,7 @@ a {
 
 #right {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
@@ -137,9 +144,11 @@ input {
 }
 
 #frame2 {
+
   width: 50vmin;
-  height: 30vmin;
+  height: 32vmin;
   border-style: ridge;
+  margin-top:10vmin;
 }
 
 .check {
