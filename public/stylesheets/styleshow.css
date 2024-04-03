@@ -53,3 +53,13 @@ body {
     margin: 0;
     background-color: #65737e;
 }
+
+main {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    font-size: 2vmin;
+}
+
+.orderlist {
+    display: flex;
+}
