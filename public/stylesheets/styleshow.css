@@ -56,7 +56,7 @@ body {
 
 main {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     font-size: 2vmin;
 }
 
@@ -77,4 +77,16 @@ main {
 #middle {
     height: 80vmin;
     overflow: auto;
+}
+
+#p1 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#p2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
