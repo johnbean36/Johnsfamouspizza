@@ -14,7 +14,7 @@
 </nav>
 <main>
     <section></section>
-    <section>
+    <section id="middle">
         <div>
             <form action="/ordering/byNum" method="POST">
                 <div><label for="ordernum">Enter Order Number:&nbsp</label></div>
@@ -45,6 +45,9 @@
                         <div><%= a %></div>          
                         <% }) %>
                       </div>
+                      <form action="/ordering/<%= orders._id %>" method="POST">
+                      <button type="submit">Delete</button>
+                      </form>
                 </div>
             <% } %>
         </div>

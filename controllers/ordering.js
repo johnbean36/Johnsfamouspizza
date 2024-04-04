@@ -165,6 +165,16 @@ function lookupNum(req,res){
 
 }
 
+async function deleteOrder(req,res){
+    try{
+        await Order.findByIdAndDelete(req.params.id);
+    }
+    catch(err){
+        console.log(err);
+    }
+
+}
+
 module.exports = {
     createOrder,
     lookup,
@@ -172,5 +182,6 @@ module.exports = {
     newOrder,
     showOrders,
     byNumber,
-    lookupNum
+    lookupNum,
+    deleteOrder
 }

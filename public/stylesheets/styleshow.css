@@ -73,3 +73,8 @@ main {
 #spacing {
     margin-bottom: 2vmin;
 }
+
+#middle {
+    height: 80vmin;
+    overflow: auto;
+}
