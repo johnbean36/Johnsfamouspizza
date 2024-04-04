@@ -16,7 +16,7 @@
 </nav>
 <main>
   
-  <section id="left">
+  <div id="left">
     <div id="frame">
 
         <form action="/ordering/lookup" method="Post">
@@ -58,12 +58,12 @@
         
       <% } %>
     </div>
-  </section>
+  </div>
 
-    <section id="middle">
+    <div id="middle">
       <img id="img" src="/images/Designer.png">
-    </section>
-    <section id="right">
+    </div>
+    <div id="right">
       <div id="frame2">
         <form action="/ordering/new" method="POST" id="toppings">
           <div id='checks'>
@@ -142,7 +142,7 @@
           </div>
         </form>
       </div>
-    </section>
+    </div>
     
 </main>
 <%- include('../partials/footer'); %>
