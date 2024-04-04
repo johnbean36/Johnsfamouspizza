@@ -107,7 +107,8 @@ async function newOrder(req,res){
         console.log(customerId);
         const employee = await Employee.findOne({email: req.user.email});
         let employeeId = employee._id;
-        const count = await Order.countDocuments({})
+        const count = await Order.find({})
+
             counts = count + 1;
         Order.create({
             employee: employeeId,
@@ -172,7 +173,7 @@ async function deleteOrder(req,res){
     catch(err){
         console.log(err);
     }
-
+    res.redirect('/ordering');
 }
 
 module.exports = {

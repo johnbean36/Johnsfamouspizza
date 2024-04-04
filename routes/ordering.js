@@ -10,6 +10,6 @@ router.post('/new', loggedIn, orderingCtrl.newOrder);
 router.get('/show', loggedIn, orderingCtrl.showOrders);
 router.get('/orderId', loggedIn, orderingCtrl.byNumber);
 router.post('/byNum', loggedIn, orderingCtrl.lookupNum);
-router.post('/:id', loggedIn, orderCtrl.deleteOrder);
+router.post('/:id', loggedIn, orderingCtrl.deleteOrder);
 
 module.exports = router;
