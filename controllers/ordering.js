@@ -104,12 +104,11 @@ async function newOrder(req,res){
         const customer = await Customer.findOne({phoneNumber: req.body.phone});
         let counts = 0;
         customerId = customer._id;
-        console.log(customerId);
         const employee = await Employee.findOne({email: req.user.email});
         let employeeId = employee._id;
-        const count = await Order.find({})
+        const count = await Order.countDocuments();
 
-            counts = count + 1;
+        counts = count + 1;
         Order.create({
             employee: employeeId,
             customer: customerId,
